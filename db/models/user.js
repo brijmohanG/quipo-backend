@@ -34,7 +34,7 @@ const attributes = {
     allowNull: true,
   },
   pin: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: true,
   },
 };
