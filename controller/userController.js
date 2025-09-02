@@ -12,20 +12,21 @@ module.exports.addUser = async function (req, res) {
         const validatedObject = Joi.object({
             firstName: Joi.string(),
             lastName: Joi.string(),
+            phone: Joi.string().allow(''),
             city: Joi.string().allow(''), // City
             state: Joi.string().allow(''), // state
             pin: Joi.string().allow(''), // Postal code
-            phone: Joi.string().allow('')
+            
         })
 
         /* validating the validation values */
         const validateValue = validatedObject.validate({
             firstName: body.firstName,
             lastName: body.lastName,
+            phone: body.phone,
             city: body.city,
             state: body.state,
             pin: body.pin,
-            phone: body.phone
 
         }, { abortEarly: false })
 
