@@ -4,12 +4,15 @@ const express = require('express');
 const db = require('./db'); // Sequelize DB config
 const sequelize = db.sequelize; // ✅ correctly extract the instance
 const appRoutes = require('./routes');
+const cors = require('cors');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 app.use('/api', appRoutes);
 
 // Test route
